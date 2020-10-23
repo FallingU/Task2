@@ -8,9 +8,9 @@ import java.io.IOException;
  */
 public class Test {
     public static void main(String[] args) throws IOException {
-        FileCutAndRecover fileCutAndRecover = new FileCutAndRecover(new File("target.txt"), new File("a.txt"));
-        new Thread(fileCutAndRecover, "线程1").start();
-        new Thread(fileCutAndRecover,"线程2").start();
+        FileCutAndRecover fileCutAndRecover = FileCutAndRecover.getInstance(new File("target.txt"), new File("a.txt"));
+        new Thread(fileCutAndRecover,"线程1").start();
+        new Thread(fileCutAndRecover, "线程2").start();
         new Thread(fileCutAndRecover,"线程3").start();
     }
 }
